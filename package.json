@@ -14,10 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "redux-devtools": "^3.7.0"
-  },
-  "dependencies": {
-    "redux": "^4.1.1"
+    "concurrently": "^5.1.0"
   }
 }
