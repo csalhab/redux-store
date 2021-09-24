@@ -3,7 +3,7 @@ import ProductItem from "../ProductItem";
 
 //Redux
 //import { useStoreContext } from '../../utils/GlobalState';
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
@@ -14,8 +14,11 @@ import spinner from "../../assets/spinner.gif";
 function ProductList() {
   //Redux
   //const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
 
-  const { currentCategory } = state;
+  //Redux
+  //const { currentCategory } = state;
+  const { currentCategory } = useSelector((state) => state);
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -72,4 +75,4 @@ function ProductList() {
   );
 }
 
-export default connect()(ProductList);
+export default ProductList;

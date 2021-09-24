@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 
 //Redux
 //import { useStoreContext } from '../../utils/GlobalState';
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   UPDATE_CATEGORIES,
@@ -15,8 +15,11 @@ import { idbPromise } from "../../utils/helpers";
 function CategoryMenu() {
   //Redux
   //const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
 
-  const { categories } = state;
+  //Redux
+  //const { categories } = state;
+  const { categories } = useSelector((state) => state);
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
@@ -63,4 +66,4 @@ function CategoryMenu() {
   );
 }
 
-export default connect()(CategoryMenu);
+export default CategoryMenu;

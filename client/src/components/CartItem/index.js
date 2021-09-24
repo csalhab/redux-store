@@ -2,7 +2,7 @@ import React from "react";
 
 //Redux
 //import { useStoreContext } from "../../utils/GlobalState";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -10,6 +10,7 @@ import { idbPromise } from "../../utils/helpers";
 const CartItem = ({ item }) => {
   //Redux
   //const [, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
 
   const removeFromCart = (item) => {
     dispatch({
@@ -67,4 +68,4 @@ const CartItem = ({ item }) => {
   );
 };
 
-export default connect()(CartItem);
+export default CartItem;

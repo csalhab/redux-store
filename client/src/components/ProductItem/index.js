@@ -4,7 +4,7 @@ import { pluralize } from "../../utils/helpers";
 
 //Redux
 //import { useStoreContext } from "../../utils/GlobalState";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -12,10 +12,13 @@ import { idbPromise } from "../../utils/helpers";
 function ProductItem(item) {
   //Redux
   //const [state, dispatch] = useStoreContext();
+  const dispatch = useDispatch();
 
   const { image, name, _id, price, quantity } = item;
 
-  const { cart } = state;
+  //Redux
+  //const { cart } = state;
+  const { cart } = useSelector((state) => state);
 
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
@@ -55,4 +58,5 @@ function ProductItem(item) {
   );
 }
 
-export default connect()(ProductItem);
+//export default connect()(ProductItem);
+export default ProductItem;
