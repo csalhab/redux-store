@@ -18,7 +18,9 @@ function ProductList() {
 
   //Redux
   //const { currentCategory } = state;
-  const { currentCategory } = useSelector((state) => state);
+  const state = useSelector((state) => state);
+  console.log("ProductList state: ", state);
+  const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 

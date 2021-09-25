@@ -19,7 +19,8 @@ function CategoryMenu() {
 
   //Redux
   //const { categories } = state;
-  const { categories } = useSelector((state) => state);
+  const state = useSelector((state) => state);
+  const { categories } = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
