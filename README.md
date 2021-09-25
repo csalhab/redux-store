@@ -12,12 +12,17 @@ This app is released and available publically via a deployment to Heroku. Heroku
 
 ## Technologies Used
 
-i) Front-end & Back-end MERN Full Stack
+i) React-Redux's Global State for handling the app's state management
+
+ii) Front-end & Back-end MERN Full Stack
 (MongoDB | ExpressJS | React | NodeJS)
 (Mongoose too)
-ii) Additionally supported by Apollo Server w/ GraphQL API
-iii) JWT (JSON Web Token)
-iv) Stripe Payment Gateway Integration
+
+iii) Additionally supported by Apollo Server w/ GraphQL API
+
+iv) JWT (JSON Web Token)
+
+v) Stripe Payment Gateway Integration
 
 ## Table of Contents
 
